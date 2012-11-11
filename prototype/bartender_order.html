@@ -24,12 +24,48 @@ $(function() {
    var links = $('div#order1').click(function() {
        links.removeClass('alert-info');
        $(this).addClass('alert-success');
+	$('div#order1pickup').removeClass('hide');
+	$('div#order1cancel').removeClass('hide');
+	$('div#order1refund').removeClass('hide');
    });
 });
 $(function() {
    var links = $('div#order2').click(function() {
        links.removeClass('alert-info');
        $(this).addClass('alert-success');
+	$('div#order2pickup').removeClass('hide');
+        $('div#order2cancel').removeClass('hide');
+        $('div#order2refund').removeClass('hide');
+   });
+});
+$(function() {
+   var links = $('div#order1pickup').click(function() {
+       $(this).parents('div#order1box').addClass('hide');
+   });
+});
+$(function() {
+   var links = $('div#order1cancel').click(function() {
+       $(this).parents('div#order1box').addClass('hide');
+   });
+});
+$(function() {
+   var links = $('div#order1refund').click(function() {
+       $(this).parents('div#order1box').addClass('hide');
+   });
+});
+$(function() {
+   var links = $('div#order2pickup').click(function() {
+       $(this).parents('div#order2box').addClass('hide');
+   });
+});
+$(function() {
+   var links = $('div#order2cancel').click(function() {
+       $(this).parents('div#order2box').addClass('hide');
+   });
+});
+$(function() {
+   var links = $('div#order2refund').click(function() {
+       $(this).parents('div#order2box').addClass('hide');
    });
 });
 </script>
@@ -92,40 +128,71 @@ $(function() {
   <div class="row">
 	  <div class="span12">
 
-	      <div class="span10 alert alert-block">
-	        <h4 class="alert-heading">Order 1</h4>
-		<br />
-
-		<div class="span8 alert alert-info" id="order1">
-			<div class="span1 offset1">
-				<h1 style="color: red;">5</h1>
+	      <div class="span10 alert alert-block" id="order1box">
+		<div class="row">
+			<div class="span10">
+				<div class="span2">
+	        			<h1 class="alert-heading">Order 1</h1>
+				</div>
+				<div class="span3 hide" id="order1pickup" style="padding-top: 15px;">
+					<a class="btn btn-success btn-large" href="#" style="color: white">Picked Up</a>
+				</div>
+				<div class="span1 hide" id="order1cancel" style="padding-top: 15px">
+					<a class="btn btn-warning btn-small" href="#" style="color: black"><i class="icon-warning-sign"></i>Cancelled</a>
+				</div>
+				<div class="span1 offset1 hide" id="order1refund" style="padding-top: 15px">
+					<a class="btn btn-danger btn-small" href="#" style="color: white"><i class="icon-remove icon-white"></i>Refund</a>
+				</div>
 			</div>
-			<div class="span1">
-				<h1 style="color: white;">Bud Light</h1>
-			</div>
-			<div class="span3 offset1">
-				<img src="img/budlight.jpg" width="200px">
-			</div>
-	      	</div>
-	      </div>
+		</div>
+		<div class="row">
+			<div class="span10">
+				<div class="span8 alert alert-info" id="order1">
+					<div class="span1 offset1">
+						<h1 style="color: red;">5</h1>
+					</div>
+					<div class="span1">
+						<h1 style="color: white;">Bud Light</h1>
+					</div>
+					<div class="span3 offset1">
+						<img src="img/budlight.jpg" width="200px">
+					</div>
+	      			</div>
+	      		</div>
+		</div>
+		</div>
 
 		<div class="span10 alert alert-block">
-                <h4 class="alert-heading">Order 2</h4>
-		<br />
-
-                <div class="span8 alert alert-info" id="order2">
-                        <div class="span1 offset1">
-                                <h1 style="color: red;">1</h1>
-			</div>
-			<div class="span1">
-				<h1 style="color: white;"> Rum &amp; Coke</h1>
+		<div class="row">
+			<div class="span10">
+                                <div class="span2">
+                                        <h1 class="alert-heading">Order 2</h1>
+                                </div>
+                                <div class="span3 hide" id="order2pickup" style="padding-top: 15px;">
+                                        <a class="btn btn-success btn-large" href="#" style="color: white">Picked Up</a>
+                                </div>
+                                <div class="span1 hide" id="order2cancel" style="padding-top: 15px">
+                                        <a class="btn btn-warning btn-small" href="#" style="color: black"><i class="icon-warning-sign"></i>Cancelled</a>
+                                </div>
+                                <div class="span1 offset1 hide" id="order2refund" style="padding-top: 15px">
+                                        <a class="btn btn-danger btn-small" href="#" style="color: white"><i class="icon-remove icon-white"></i>Refund</a>
+                                </div>
                         </div>
-                        <div class="span3 offset1">
-                                <img src="img/captainmorgan.jpg" width="200px">
-                        </div>
-                </div>
-
-
+		</div>
+		<div class="row">
+			<div class="span10">
+                		<div class="span8 alert alert-info" id="order2">
+                        		<div class="span1 offset1">
+                                		<h1 style="color: red;">1</h1>
+					</div>
+					<div class="span1">
+						<h1 style="color: white;"> Rum &amp; Coke</h1>
+                        		</div>
+                        		<div class="span3 offset1">
+                                		<img src="img/captainmorgan.jpg" width="200px">
+                        	</div>
+                	</div>
+		</div>
               </div>
 	  </div>
   </div>
